@@ -16,8 +16,8 @@ const ChatWindow = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Apikey': 'Api-Key gAjlGHNH.A6zOjz9M36Ajom1ejowiFPRwOgsPEUPp',
-        // 'Apikey': 'error',
+        // 'Apikey': 'Api-Key gAjlGHNH.A6zOjz9M36Ajom1ejowiFPRwOgsPEUPp',
+        'Apikey': 'error',
       },
       body: JSON.stringify({ payload: input }),
     });

@@ -1,11 +1,16 @@
-import './App.css';
-import ChatWindow from "./components/Chatwindow";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Chatwindow from './components/Chatwindow';
+import About from './components/About';
 
 function App() {
   return (
-    <div className="App">
-      <ChatWindow />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Chatwindow />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
