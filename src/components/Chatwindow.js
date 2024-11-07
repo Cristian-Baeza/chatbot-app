@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from "./Header";
 
 const ChatWindow = () => {
   const [messages, setMessages] = useState([]);
@@ -16,14 +15,12 @@ const ChatWindow = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'Apikey': 'Api-Key gAjlGHNH.A6zOjz9M36Ajom1ejowiFPRwOgsPEUPp',
-        'Apikey': 'error',
+        'Apikey': 'Api-Key xxx-xxxxxxxxxxx-xxx',
       },
       body: JSON.stringify({ payload: input }),
     });
 
     const data = await response.json();
-    // chat gpt only mistake was that the response was data.text, not data.response.
     const botMessage = { sender: 'bot', text: data.text || 'No response' };
 
     setMessages((prevMessages) => [...prevMessages, botMessage]);
@@ -31,15 +28,7 @@ const ChatWindow = () => {
   };
 
   return (
-      <div
-          className="flex flex-col h-screen bg-cover bg-center font-retro"
-          style={{
-            backgroundImage: "url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp')",
-          }}
-      >
-        <div className="flex flex-col h-full bg-opacity-90">
-          <Header/>
-
+        <div className="flex flex-col h-full bg-opacity-90 font-retro">
           <div className="flex-grow overflow-y-auto p-4">
             {messages.map((message, index) => (
                 <div
@@ -71,7 +60,6 @@ const ChatWindow = () => {
             </button>
           </div>
         </div>
-      </div>
   );
 };
 
