@@ -16,8 +16,8 @@ const ChatWindow = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'Apikey': 'Api-Key gAjlGHNH.A6zOjz9M36Ajom1ejowiFPRwOgsPEUPp',
-        'Apikey': 'error',
+        'Apikey': 'Api-Key gAjlGHNH.A6zOjz9M36Ajom1ejowiFPRwOgsPEUPp',
+        // 'Apikey': 'error',
       },
       body: JSON.stringify({ payload: input }),
     });
@@ -32,7 +32,7 @@ const ChatWindow = () => {
 
   return (
       <div
-          className="flex flex-col h-screen bg-cover bg-center"
+          className="flex flex-col h-screen bg-cover bg-center font-retro"
           style={{
             backgroundImage: "url('https://ik.imagekit.io/0jty0e7po/feature_mag-feature_art-space_food_MhxQD-96Q.webp')",
           }}
@@ -44,7 +44,7 @@ const ChatWindow = () => {
             {messages.map((message, index) => (
                 <div
                     key={index}
-                    className={`my-2 p-2 rounded-lg max-w-xs mx-auto ${
+                    className={`my-2 p-2 rounded-lg max-w-xl mx-auto ${
                         message.sender === 'user'
                             ? 'bg-red-500 bg-opacity-90 text-white self-end'
                             : 'bg-gray-200 bg-opacity-90 text-black self-start'
