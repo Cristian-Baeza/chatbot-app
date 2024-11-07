@@ -44,10 +44,10 @@ const ChatWindow = () => {
             {messages.map((message, index) => (
                 <div
                     key={index}
-                    className={`my-2 p-2 rounded-lg max-w-xs ${
+                    className={`my-2 p-2 rounded-lg max-w-xs mx-auto ${
                         message.sender === 'user'
-                            ? 'bg-red-500 bg-opacity-80 text-white self-end'
-                            : 'bg-gray-200 bg-opacity-80 text-black self-start'
+                            ? 'bg-red-500 bg-opacity-90 text-white self-end'
+                            : 'bg-gray-200 bg-opacity-90 text-black self-start'
                     }`}
                 >
                   {message.text}
@@ -55,19 +55,19 @@ const ChatWindow = () => {
             ))}
           </div>
 
-          <div className="p-4 flex items-center bg-transparent">
+          <div className="p-4 flex items-center bg-transparent mx-auto max-w-2xl w-full">
             <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type a message..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white bg-opacity-80 focus:outline-none focus:border-red-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white bg-opacity-90 focus:outline-none focus:border-red-500"
             />
             <button
                 onClick={handleSendMessage}
-                className="bg-red-600 bg-opacity-80 text-white px-4 py-2 ml-2 rounded-lg hover:bg-opacity-90"
+                className="bg-red-600 bg-opacity-90 text-white px-4 py-2 ml-2 rounded-lg hover:bg-opacity-90"
             >
-              Send
+              SEND
             </button>
           </div>
         </div>
